@@ -1,0 +1,69 @@
+
+;Isha Mudgal
+;OLA 8
+;Part 2 - general operations
+
+  JMP start
+  
+  ; Variables
+
+  var1: 2B
+  var2: A9
+  var3: AF
+  var4: D1
+  ans1: 0
+  ans2: 0
+  ans3: 0
+  ans4: 0
+  ans5: 0
+  ans6: 0
+  ans7: 0
+
+  start:       ; the label 'start'. The jump statement earlier jumps here
+     LDAC var1 ; Load the first variable into Accumulator
+     MOVAC     ; Move the contents of Accumulator to R
+     LDAC var2 ; Load the second variable into Accumulator
+     ADD       ; Add A9 and 2B, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans1 ; store the sum in ans1
+     ; answer d4
+
+     LDAC var2 ; Load the second variable into Accumulator
+     SUB       ; subtract A9 and 2B, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans2 ; store the difference in ans2
+     ; answer 7e
+
+     LDAC var2 ; Load the second variable into Accumulator
+     AND       ; A9 and 2B, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans3 ; store the answer in ans3
+     ; answer 29
+
+     LDAC var2 ; Load the second variable into Accumulator
+     OR        ; A9 or 2B, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans4 ; store the answer in ans4
+     ; answer ab   
+
+     LDAC var2 ; Load the second variable into Accumulator
+     ASHR      ; arithmetic right shift for the contents of accumulator, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans5 ; store the answer in ans5
+     CLAC
+     ; answer 54
+
+     LDAC var3 ; Load the third variable into Accumulator
+     INC       ; Increment var3, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans6 ; store the answer in ans6
+     CLAC
+     ;answer b0
+
+     LDAC var4 ; Load the fourth variable into Accumulator
+     NOT       ; Not var4, move result into Accumulator
+     OUT       ; Send Accumulator contents to Output Register
+     STAC ans7 ; store the answer in ans7
+     ; answer fff2e
+        
+      HALT      ; Stop execution

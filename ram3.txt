@@ -1,0 +1,32 @@
+
+;Isha Mudgal
+;OLA 8
+;Part 3 - Circumference of a circle of radius 4
+
+  JMP multiply
+  
+  ; Variables
+  radius: 4
+  decrement: 1
+  counter: 6  ;for every circumference calculation, the radius is multiplied to 2 and pi(3)
+  ans: 0
+ 
+  multiply: 
+     LDAC radius    ; load radius in acc
+     MOVAC       	  ; store radius into R
+     LDAC ans 		  ;load value of addition in ACC
+     ADD            ;add radius and addition
+     STAC ans       ; store it into addition
+     LDAC decrement       ; load 1
+     MOVAC          ; mov 1 to R
+     LDAC counter     ; Load the counter into Accumulator
+     SUB            ; subtract 1 from counter value
+     STAC counter   ; store new counter value into counter
+  LDAC counter   ; load into acc for checking condition for jumpz
+     JMPZ end       ;check if acc is empty, if its empty go to end
+     JMP multiply   ; if acc is not empty jump back to loop
+  end:
+     LDAC ans  ;load the answer to acc
+     OUT       ; output the answer
+     ;answer 18
+      HALT      ; Stop execution
